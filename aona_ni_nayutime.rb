@@ -10,8 +10,8 @@ Plugin.create(:aona_ni_nayutime) do
 			if m.message.idname()="babuuuuuuuubot" then
 				if Nrand.rand(10)< then
 					sey_aona(Service.primary)
+				end
 			end
 		end
 	end
-end
 end
