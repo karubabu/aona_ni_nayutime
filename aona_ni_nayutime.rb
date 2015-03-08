@@ -7,11 +7,11 @@ Plugin.create(:aona_ni_nayutime) do
 	end
 	on_mention do |ms|
 		ms.each do |m|
-			if m.user.idname=~ /bot/ then
-				#if Nrand.rand(10)<=10 then
+			#if m.user.idname=~ /bot/ then
+				if Nrand.rand(10)<=10 then
 					sey_aona(Service.primary)
-				#end
-			end
+				end
+			#end
 		end
 	end
 end
