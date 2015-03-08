@@ -2,7 +2,8 @@ Plugin.create(:aona_ni_nayutime) do
 	DEFINED_TIME = Time.new.freeze
 	#Nrand = Random.new(100)
 	def say_aona(m)
-		Service.primary.post(:message => "#{"@" + m.user.idname + " 青菜に塩なう（悪い印象を与えた）"}", :replyto => m)
+		#"#{"@" + m.user.idname + " 青菜に塩なう（悪い印象を与えた）"}"
+		Service.primary.post(:message => "test", :replyto => m)
 	end
 
 	on_mention do |s,ms|
