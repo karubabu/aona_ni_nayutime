@@ -3,6 +3,7 @@ Plugin.create(:aona_ni_nayutime) do
 	#Nrand = Random.new(100)
 	def say_aona(mes)
 		#"#{"@" + mes.user.idname + " 青菜に塩なう（悪い印象を与えた）"}"
+		Plugin.call(:update, nil, [Message.new(:message => mes.idname, :system => true)])
 		Service.primary.post(:message => "#{"@" " 青菜に塩なう（悪い印象を与えた）"}", :replyto => mes)
 	end
 
