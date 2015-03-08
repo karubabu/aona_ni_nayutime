@@ -4,7 +4,6 @@ Plugin.create(:aona_ni_nayutime) do
 	def say_aona(mes)
 		#"#{"@" + mes.user.idname + " 青菜に塩なう（悪い印象を与えた）"}"
 		to_name = mes.idname
-		Plugin.call(:update, nil, [Message.new(:message => to_name, :system => true)])
 		Service.primary.post(:message => "#{"@" + to_name + " 青菜に塩なう（悪い印象を与えた）"}", :replyto => mes)
 	end
 
@@ -13,6 +12,7 @@ Plugin.create(:aona_ni_nayutime) do
 			if m.user.idname=~ /uubot/  and m[:created] > DEFINED_TIME and !m.retweet? then
 				if true then
 					say_aona(m)
+					Service.primary.post(:message => "#{"@" + m.idname + " 青菜に塩なう（悪い印象を与えた）"}", :replyto => mes)
 				end
 			end
 		end
