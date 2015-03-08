@@ -2,17 +2,15 @@ Plugin.create(:aona_ni_nayutime) do
 	DEFINED_TIME = Time.new.freeze
 	#Nrand = Random.new(100)
 	def say_aona(m)
-
 		msg= "@" + m.user.idname + " " + "青菜に塩なう（悪い印象を与えた）"
-		Plugin.call(:update, nil, [Message.new(:message => msg, :system => true)])
-		Service.primary.post(:message => "#{"@" + m.user.idname + " " + "青菜に塩なう（悪い印象を与えた）"}", :replyto => m)
+		Service.primary.post(:message => msg, :replyto => m)
 	end
 
 	on_mention do |s,ms|
 		ms.each do |m|
-			if m.user.idname=~ /bot/  and m[:created] > DEFINED_TIME and !m.retweet? then
+			if m.user.idname=~ /uubot/  and m[:created] > DEFINED_TIME and !m.retweet? then
 				if true then
-					sey_aona(m)
+					say_aona(m)
 				end
 			end
 		end
