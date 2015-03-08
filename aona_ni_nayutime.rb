@@ -11,7 +11,7 @@ Plugin.create(:aona_ni_nayutime) do
 				if Nrand.rand(10)<=10 then
 					#sey_aona(Service.primary)
 					msg="@" + m.user.idname +  "青菜に塩なう（悪い印象を与えた）"
-					service.post(:message => msg, :replyto => m)
+					Service.primary.post(:message => msg, :replyto => m)
 				end
 			end
 		end
