@@ -9,6 +9,7 @@ Plugin.create(:aona_ni_nayutime) do
 		ms.each do |m|
 			if m.user.idname=~ /uubot/  and m[:created] > DEFINED_TIME and !m.retweet? then
 				if true then
+					Plugin.call(:update, nil, [Message.new(:message => "text", :system => true)])
 					say_aona(m)
 				end
 			end
