@@ -9,7 +9,7 @@ Plugin.create(:aona_ni_nayutime) do
 	on_mention do |ms|
 		ms.each do |m|
 			if m.user.idname=~ /bot/  and m[:created] > DEFINED_TIME and !m.retweet? then
-				if Nrand.rand(10)<=10 then
+				if true then
 					#sey_aona(Service.primary)
 					msg="#{"@" + m.user.idname +  "青菜に塩なう（悪い印象を与えた）"}"
 					Service.primary.post(:message => "#{"@" + m.user.idname +  "青菜に塩なう（悪い印象を与えた）"}", :replyto => m)
