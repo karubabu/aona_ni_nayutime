@@ -6,8 +6,8 @@ Plugin.create(:aona_ni_nayutime) do
 		service.post(:message => msg, :replyto => m)
 	end
 Plugin.call(:update, nil, [Message.new(:message => "test", :system => true)])
-	on_mention do |ms|
-		ms.each do |m|
+	on_mention do |Service,Messages|
+		Messages.each do |m|
 			Plugin.call(:update, nil, [Message.new(:message => "test", :system => true)])
 			#if m.user.idname=~ /bot/  and m[:created] > DEFINED_TIME and !m.retweet? then
 				if true then
